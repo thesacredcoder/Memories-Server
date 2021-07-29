@@ -3,6 +3,7 @@ const cors = require("cors");
 
 const connection = require("./config/db");
 const postRoutes = require("./routes/posts");
+const userRoutes = require("./routes/users");
 
 require("dotenv").config();
 
@@ -13,6 +14,7 @@ app.use(express.json({ limit: "30mb" }));
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/posts", postRoutes);
+app.use("/users", userRoutes);
 
 const PORT = process.env.PORT || 3001;
 
